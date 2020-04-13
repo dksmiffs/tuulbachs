@@ -22,5 +22,5 @@ def emit_version():
   
 
 # -----
-if "__main__" == __name__:
+if '__main__' == __name__:
   print(emit_product() + ' ' + emit_version())
