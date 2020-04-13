@@ -3,7 +3,7 @@ from tuulpy.subprocess import subpResult
 
 # -----
 def is_clean_working_tree():
-  dirty = subpResult.run("git status --porcelain")
+  dirty = subpResult.run('git status --porcelain')
   return not dirty  
 
 
@@ -16,5 +16,5 @@ def main():
 
 
 # -----
-if "__main__" == __name__:
+if '__main__' == __name__:
   main()
