@@ -3,11 +3,12 @@
 import pip
 pip.main(['install', 'PyYAML'])
 
-from distutils.core import setup
-from version        import emit_version
+from setuptools import setup, find_packages
+from version    import emit_version
 
 setup(
   name='tuulbachs',
   version=emit_version(),
   long_description=open('README.md').read(),
+  packages=find_packages(),
 )

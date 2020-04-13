@@ -6,7 +6,7 @@ import yaml
 # -----
 def parse_yaml():
   file = open('version.yaml', 'r')
-  return yaml.load(file)
+  return yaml.load(file, Loader=yaml.FullLoader)
 
 
 # -----
