@@ -1,4 +1,6 @@
 # kickpy
 
-A bash script intended to find Python and kick a Python script.  It should
-be used as a top level script, kicking a new process.
+A bash script intended to kick a Python script from an environment that doesn't
+have an estabished Python environment yet.  For example:
+
+  ./kickpy.sh example.py
