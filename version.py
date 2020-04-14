@@ -1,23 +1,20 @@
 # tuulbachs emitter for tuulbachs-formatted version.yaml file
 
-import yaml
+from tuulyaml.parse import parse_yaml
 
 
-# -----
-def parse_yaml():
-  file = open('version.yaml', 'r')
-  return yaml.load(file, Loader=yaml.FullLoader)
+_filename = 'version.yaml'
 
 
 # -----
 def emit_product():
-  cfg = parse_yaml()
+  cfg = parse_yaml(_filename)
   return cfg['product_name']
 
 
 # -----
 def emit_version():
-  cfg = parse_yaml()
+  cfg = parse_yaml(_filename)
   return str(cfg['major']) + '.' + str(cfg['minor']) + '.' + str(cfg['patch'])
   
 
