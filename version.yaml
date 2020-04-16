@@ -1,6 +1,4 @@
 # tuulbachs-formatted version file
 ---
 product_name: tuulbachs
-major: 0
-minor: 1
-patch: 0
+version: 0.1.0

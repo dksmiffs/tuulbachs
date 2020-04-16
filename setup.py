@@ -3,12 +3,12 @@
 import pip
 pip.main(['install', 'PyYAML'])
 
-from setuptools import setup, find_packages
-from version    import emit_version
+from setuptools      import setup, find_packages
+from tuulver.version import emit_version
 
 setup(
   name='tuulbachs',
-  version=emit_version(),
+  version=emit_version('version.yaml'),
   long_description=open('README.md').read(),
   packages=find_packages(),
 )
