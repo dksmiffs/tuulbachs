@@ -1,3 +1,4 @@
 pyyaml
 semver
 sphinx
+sphinx_rtd_theme
