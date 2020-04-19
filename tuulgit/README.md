@@ -1,7 +1,3 @@
-# check\_clean.py
+# tuulgit
 
-Check whether the local Git working tree is clean. Example:
-
-```bash
-python check_clean.py
-```
+Opinionated tuuls for working with Git.
