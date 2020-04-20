@@ -41,9 +41,7 @@ def tag_delete_local(tag):
 
 # -----
 def main():
-  """
-  Show example usage
-  """
+  # Show example usage
   try:
     atag = 'temptag'
     tag_current(atag)

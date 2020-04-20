@@ -16,9 +16,7 @@ def is_clean_working_tree():
 
 
 def main():
-  """
-  Show example usage
-  """
+  # Show example usage
   if is_clean_working_tree():
     print('clean')
   else:
