@@ -13,7 +13,7 @@ from   tuulpy.subprocess   import subpResult
 # -----
 def tag_current(tag):
   """
-  Git tag the current commit from a clean working tree
+  Git tag (annotated) the current commit from a clean working tree
 
   :raises TuulError: when the caller attempts to tag an unclean working tree
       or to use a tag that already exists on the repo
@@ -21,7 +21,7 @@ def tag_current(tag):
   if not is_clean_working_tree():
     raise TuulError('tag not allowed on unclean working tree')
   else:
-    res = subpResult.run('git tag ' + tag)
+    res = subpResult.run('git tag --annotate -m "annotated tag" ' + tag)
     if re.search(b'^fatal.*already exists$', res):
       raise TuulError('cannot apply tag that already exists in the repo')
 
