@@ -21,6 +21,7 @@ import sphinx_rtd_theme
 project = 'tuulbachs'
 copyright = '2020, Dave Smith'
 author = 'Dave Smith'
+master_doc = 'index'
 
 
 # -- General configuration ---------------------------------------------------
