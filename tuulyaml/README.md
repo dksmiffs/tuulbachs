@@ -1,7 +1,3 @@
-# parse.py
+# tuulyaml
 
-Parse a YAML input file. Example:
-
-```bash
-python parse.py
-```
+Low level tuuls for interacting with YAML files.

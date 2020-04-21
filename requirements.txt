@@ -1,4 +1,4 @@
-pyyaml
+ruamel.yaml
 semver
 sphinx
 sphinx_rtd_theme
