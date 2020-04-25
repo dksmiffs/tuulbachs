@@ -11,6 +11,17 @@ from   tuulpy.subprocess   import subpResult
 
 
 # -----
+def __tag_current_helper(tag, option):
+  if not is_clean_working_tree():
+    raise TuulError('tag not allowed on unclean working tree')
+  else:
+    res = subpResult.run('git tag ' + option + ' -m "tuulgit-generated tag" ' +
+                         tag)
+    if re.search(b'^fatal.*already exists$', res):
+      raise TuulError('cannot apply tag that already exists in the repo')
+
+
+# -----
 def tag_current(tag):
   """
   Git tag (annotated) the current commit from a clean working tree
@@ -18,12 +29,18 @@ def tag_current(tag):
   :raises TuulError: when the caller attempts to tag an unclean working tree
       or to use a tag that already exists on the repo
   """
-  if not is_clean_working_tree():
-    raise TuulError('tag not allowed on unclean working tree')
-  else:
-    res = subpResult.run('git tag --annotate -m "annotated tag" ' + tag)
-    if re.search(b'^fatal.*already exists$', res):
-      raise TuulError('cannot apply tag that already exists in the repo')
+  __tag_current_helper(tag, '--annotate')
+
+
+# -----
+def tag_current_signed(tag):
+  """
+  Git tag (signed) the current commit from a clean working tree
+
+  :raises TuulError: when the caller attempts to tag an unclean working tree
+      or to use a tag that already exists on the repo
+  """
+  __tag_current_helper(tag, '--sign')
 
 
 # -----
@@ -56,6 +73,14 @@ def main():
       tag_delete_local(atag)
     except TuulError:
       print('deleting non-existent tag failed as expected')
+    tag_current_signed(atag)
+    print('signed tag successful')
+    try:
+      tag_current_signed(atag)
+    except TuulError:
+      print('reusing signed tag failed as expected')
+    tag_delete_local(atag)
+    print('delete signed tag successful')
   except TuulError as e:
     raise e
 
