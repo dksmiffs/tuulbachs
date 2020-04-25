@@ -17,6 +17,12 @@ Low-level software tuuls, organized into drawers.
    drawers/tuulver
    drawers/tuulyaml
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Meta
+
+   meta/install
+   meta/deploy
 
 Indices and tables
 ==================
