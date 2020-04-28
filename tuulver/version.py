@@ -46,6 +46,15 @@ def bump_minor(filename):
 
 
 # -----
+def bump_patch(filename):
+  """
+  Bump the patch portion of the version from the input YAML filename
+  """
+  v = semver.VersionInfo.parse(emit_version(filename))
+  update_product_version(filename, str(v.bump_patch()))
+
+
+# -----
 def bump_pre(filename, prebase='pre'):
   """
   Bump the "pre" portion of the version from the input YAML filename
