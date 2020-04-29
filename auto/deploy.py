@@ -3,6 +3,8 @@ from   subprocess      import call
 from   tuulver.version import bump_major, bump_minor, bump_patch
 
 parser = argparse.ArgumentParser(description='Deploy new version of tuulbachs')
+parser.add_argument('--verbose', action='store_true',
+                    help='send all output to standard output')
 # No need to deploy tuulbachs unless bumping some version number
 group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('--bump_major', action='store_true',
