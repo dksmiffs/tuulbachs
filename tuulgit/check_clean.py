@@ -48,7 +48,7 @@ def has_unstaged_changes():
   Return a boolean indicating whether the working tree has unstaged changes
   """
   try:
-    sh.git('diff-index', '--quiet', 'HEAD', '--')
+    sh.git('diff-files', '--quiet', '--')
     return False
   except sh.ErrorReturnCode_1:
     return True
