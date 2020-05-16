@@ -10,5 +10,6 @@ setup(
   name='tuulbachs',
   version=emit_version('version.yaml'),
   long_description=open('README.md').read(),
-  packages=find_packages(),
+  packages=find_packages(where='src'),
+  package_dir={'': 'src'},
 )
