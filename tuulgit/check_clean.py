@@ -48,7 +48,7 @@ def has_unstaged_changes():
   Return a boolean indicating whether the working tree has unstaged changes
   """
   try:
-    sh.git('diff-index', '--quiet')
+    sh.git('diff-index', '--quiet', 'HEAD', '--')
     return False
   except sh.ErrorReturnCode_1:
     return True
@@ -69,12 +69,15 @@ def has_untracked_unignored_files():
     return False
 
 
-def is_clean_working_tree():
+def is_clean_working_tree(check_if_working_tree = True):
   """
   Return a boolean indicating whether the Git working tree is clean or not
   """
-  dirty = subpResult.run('git status --porcelain')
-  return not dirty
+  if check_if_working_tree:
+    is_working_tree()
+  return not has_untracked_unignored_files() and \
+         not has_unstaged_changes() and \
+         not has_staged_uncommitted()
 
 
 def main():
