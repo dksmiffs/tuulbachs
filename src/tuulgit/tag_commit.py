@@ -5,9 +5,9 @@ Git tag the commit on the current branch, *only if* the working tree is clean
 """
 
 import re
-from   tuulbachs.exception import TuulError
-from   tuulgit.check_clean import is_clean_working_tree
-from   tuulpy.subprocess   import subpResult
+from   tuulbachs.exception  import TuulError
+from   tuulgit.check_status import is_clean_working_tree
+from   tuulpy.subprocess    import subpResult
 
 
 # -----
