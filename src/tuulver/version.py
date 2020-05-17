@@ -82,5 +82,5 @@ def bump_build(filename):
 
 # -----
 if '__main__' == __name__:
-  fname = '../version.yaml'
+  fname = '../../version.yaml'
   print(emit_product_name(fname) + ' ' + emit_version(fname))
