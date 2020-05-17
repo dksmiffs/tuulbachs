@@ -14,6 +14,9 @@ from   tuulbachs.exception import TuulError
 def is_working_tree():
   """
   Check if this is a git working tree at all
+
+  :raises TuulError: when the caller attempts to use this function outside of
+      a git working tree
   """
   try:
     sh.git.status()
