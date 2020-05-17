@@ -3,13 +3,23 @@
 import pip
 pip.main(['install', 'PyYAML'])
 
-from setuptools      import setup, find_packages
-from tuulver.version import emit_version
+import os
+from   setuptools      import setup, find_packages
+import sys
+
+# follow https://github.com/pyca/cryptography's model for placing packages in
+#    src subdirectory
+base_dir = os.path.dirname(__file__)
+src_dir = os.path.join(base_dir, 'src')
+sys.path.insert(0, src_dir)
+
+from   tuulver.version import emit_version
 
 setup(
   name='tuulbachs',
   version=emit_version('version.yaml'),
   long_description=open('README.md').read(),
-  packages=find_packages(where='src'),
   package_dir={'': 'src'},
+  packages=find_packages(where='src'),
+  setup_requires=['wheel']
 )
