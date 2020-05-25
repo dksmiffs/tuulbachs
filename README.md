@@ -1,4 +1,6 @@
 # tuulbachs
+[![image](https://img.shields.io/github/license/dksmiffs/tuulbachs.svg)](https://github.com/dksmiffs/tuulbachs)
+[![image](https://img.shields.io/github/release/dksmiffs/tuulbachs.svg)](https://github.com/dksmiffs/tuulbachs/releases)
 
 Documentation [here][1].
 
