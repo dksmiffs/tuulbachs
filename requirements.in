@@ -1,0 +1,6 @@
+flake8            # Style guide enforcement        - http://flake8.pycqa.org
+ruamel.yaml       # YAML 1.2 parser/emitter        - https://sourceforge.net/projects/ruamel-yaml/
+semver            # Helper for Semantic Versioning - https://github.com/python-semver/
+sh                # Subprocess replacement         - https://github.com/amoffat/sh
+sphinx            # Documentation creator          - https://www.sphinx-doc.org/en/master/
+sphinx_rtd_theme  # Sphinx readthedocs theme       - https://github.com/readthedocs/sphinx_rtd_theme
