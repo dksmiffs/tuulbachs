@@ -1,5 +1,10 @@
 dist: bionic
 
+deploy:
+  - provider: releases
+    on:
+      tags: true
+
 matrix:
   include:
     - language: python
