@@ -1,5 +1,4 @@
 import argparse
-from subprocess import call
 from tuuldevops.pipeline_steps import major_step
 from tuulver.version import bump_major, bump_minor, bump_patch
 
@@ -17,7 +16,7 @@ group.add_argument('--bump_patch', action='store_true',
 args = parser.parse_args()
 
 major_step('Install', 'install tuulbachs to local Python environment')
-call('./install_local.sh')
+# TBD
 
 vfile = '../version.yaml'
 if args.bump_major:
