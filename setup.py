@@ -13,7 +13,7 @@ base_dir = os.path.dirname(__file__)
 src_dir = os.path.join(base_dir, 'src')
 sys.path.insert(0, src_dir)
 
-from tuulver.version import emit_version
+from tuulver.version import emit_version  # noqa: E402
 
 setup(
   name='tuulbachs',

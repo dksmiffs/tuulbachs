@@ -1,7 +1,7 @@
 import argparse
-from   subprocess                import call
-from   tuuldevops.pipeline_steps import major_step
-from   tuulver.version           import bump_major, bump_minor, bump_patch
+from subprocess import call
+from tuuldevops.pipeline_steps import major_step
+from tuulver.version import bump_major, bump_minor, bump_patch
 
 parser = argparse.ArgumentParser(description='Deploy new version of tuulbachs')
 parser.add_argument('--verbose', action='store_true',
@@ -21,8 +21,8 @@ call('./install_local.sh')
 
 vfile = '../version.yaml'
 if args.bump_major:
-  bump_major(vfile) 
+    bump_major(vfile)
 elif args.bump_minor:
-  bump_minor(vfile) 
+    bump_minor(vfile)
 else:
-  bump_patch(vfile) 
+    bump_patch(vfile)
