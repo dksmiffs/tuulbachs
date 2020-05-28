@@ -10,6 +10,7 @@ matrix:
         - python -m flake8 --count auto/deploy.py
         - python -m flake8 --count setup.py
         - python -m flake8 --count src/
+        - python -m pytest --cov=tuulyaml --cov=tuulfile tests
     - language: ruby
       rvm:
         - 2.7.1
