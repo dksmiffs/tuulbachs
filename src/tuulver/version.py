@@ -5,8 +5,20 @@ Utility functions for managing a tuulbachs-formatted version YAML file
 """
 
 import semver
-from tuulyaml.parse import parse_yaml
 from tuuldevops.update_version import update_product_version
+from tuulyaml.parse import parse_yaml
+
+
+# -----
+def create_version_file(filename, product_name):
+    """
+    Create an initial tuulbachs-formatted version YAML file
+    """
+    out = open(filename, 'w')
+    print('# tuulbachs-formatted version file', file = out)
+    print('product_name: ' + product_name, file = out)
+    print('version: 0.0.0', file = out)
+    out.close()
 
 
 # -----

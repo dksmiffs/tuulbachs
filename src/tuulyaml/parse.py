@@ -15,9 +15,3 @@ def parse_yaml(filename):
     inf = Path(filename)
     yml = ruamel.yaml.YAML()
     return yml.load(inf)
-
-
-# -----
-if '__main__' == __name__:
-    cfg = parse_yaml('../version.yaml')
-    print('from parsed YAML file, product name ==> ' + cfg['product_name'])

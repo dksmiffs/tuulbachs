@@ -1,4 +1,6 @@
-flake8            # Style guide enforcement        - http://flake8.pycqa.org
+flake8            # Style guide enforcement        - https://flake8.pycqa.org
+pytest            # Python testing tool            - https://pytest.org
+pytest-cov        # Coverage plugin for pytest     - https://github.com/pytest-dev/pytest-cov
 ruamel.yaml       # YAML 1.2 parser/emitter        - https://sourceforge.net/projects/ruamel-yaml/
 semver            # Helper for Semantic Versioning - https://github.com/python-semver/
 sh                # Subprocess replacement         - https://github.com/amoffat/sh
