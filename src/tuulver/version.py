@@ -15,9 +15,9 @@ def create_version_file(filename, product_name):
     Create an initial tuulbachs-formatted version YAML file
     """
     out = open(filename, 'w')
-    print('# tuulbachs-formatted version file', file = out)
-    print('product_name: ' + product_name, file = out)
-    print('version: 0.0.0', file = out)
+    print('# tuulbachs-formatted version file', file=out)
+    print('product_name: ' + product_name, file=out)
+    print('version: 0.0.0', file=out)
     out.close()
 
 
