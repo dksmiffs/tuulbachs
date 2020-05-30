@@ -8,3 +8,4 @@ Guidance about how to deploy updates to tuulbachs itself
 #. Commit changes to Git
 #. From ``tuuldevops/tag_current_version.py``, use the ``tag_product_version`` function to properly tag this release
 #. Push the Git update (including tags) to this repo's remotes
+#. Publish the release on the repo's remote (Github, for instance)
