@@ -1,4 +1,4 @@
-"""pytest unit tests for the tuulyaml.parse module"""
+"""pytest unit tests"""
 
 from tuulyaml.parse import parse_yaml
 

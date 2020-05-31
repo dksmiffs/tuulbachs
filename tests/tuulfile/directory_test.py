@@ -1,4 +1,4 @@
-"""pytest unit tests for the tuulfile.directory module"""
+"""pytest unit tests"""
 
 from os import path
 from shutil import rmtree

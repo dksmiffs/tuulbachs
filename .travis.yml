@@ -11,7 +11,7 @@ matrix:
         - python -m flake8 --count auto/deploy.py
         - python -m flake8 --count setup.py
         - python -m flake8 --count src/
-        - python -m pytest --cov=tuulyaml --cov=tuulfile tests
+        - python -m pytest --cov=tuulbachs --cov=tuulcli --cov=tuuldevops --cov=tuulfile --cov=tuulgit --cov=tuulpy --cov=tuulver --cov=tuulyaml tests
       after_success:
         - bash <(curl -s https://codecov.io/bash)
 
