@@ -90,9 +90,3 @@ def bump_build(filename):
     else:
         new_ver = str(v.bump_build())
     update_product_version(filename, new_ver)
-
-
-# -----
-if '__main__' == __name__:
-    fname = '../../version.yaml'
-    print(emit_product_name(fname) + ' ' + emit_version(fname))

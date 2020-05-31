@@ -1,5 +1,3 @@
-"""pytest unit tests"""
-
 from pytest import raises
 import sh
 from tempfile import TemporaryDirectory

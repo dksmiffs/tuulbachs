@@ -1,5 +1,3 @@
-"""pytest unit tests"""
-
 from tuulyaml.parse import parse_yaml
 
 

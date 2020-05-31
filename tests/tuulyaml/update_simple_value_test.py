@@ -1,5 +1,3 @@
-"""pytest unit tests"""
-
 import os
 from tuulyaml.parse import parse_yaml
 from tuulyaml.update_simple_value import update_value

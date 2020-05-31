@@ -1,5 +1,3 @@
-"""pytest unit tests"""
-
 from pathlib import Path
 from tuulfile.directory import cd
 
