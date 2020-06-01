@@ -80,7 +80,8 @@ def test_bump_build():
             create_version_file(fname, 'yup')
             bump_pre(fname)
             bump_build(fname)
-            assert emit_version(fname) == '0.0.0-pre.1+build.1'
+            bump_build(fname)
+            assert emit_version(fname) == '0.0.0-pre.1+build.2'
             bump_pre(fname)
             bump_build(fname)
             assert emit_version(fname) == '0.0.0-pre.2+build.1'
