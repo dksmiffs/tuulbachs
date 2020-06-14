@@ -51,7 +51,10 @@ def has_unstaged_changes():
     Return a boolean indicating whether the working tree has unstaged changes
     """
     try:
-        sh.git('diff-files', '--quiet', '--')
+        # Pipe to sed to return if only one unstaged change is found (our job
+        #    is done).  Guidance:  https://stackoverflow.com/a/11024039
+        sh.sed(sh.git('ls-files', '--other', '--modified', '--directory',
+                      '--no-empty-directory', '--exclude-standard'), 'q1')
         return False
     except sh.ErrorReturnCode_1:
         return True
