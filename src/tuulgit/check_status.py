@@ -40,7 +40,7 @@ def has_staged_uncommitted():
     uncommitted changes
     """
     try:
-        sh.git('diff-index', '--quiet', '--cached', 'HEAD', '--')
+        sh.git('diff', '--cached', '--exit-code')
         return False
     except sh.ErrorReturnCode_1:
         return True
