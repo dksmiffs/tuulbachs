@@ -6,6 +6,7 @@ from tuulbachs.exception import TuulError
 from tuulfile.directory import cd
 from tuulgit.check_status import has_staged_uncommitted, \
                                  has_unstaged_changes, \
+                                 has_untracked_unignored_files, \
                                  is_working_tree, \
                                  repo_toplevel_path
 
@@ -56,8 +57,6 @@ def test_has_unstaged_changes():
             assert has_unstaged_changes()
             sh.git.add(fname)
             assert not has_unstaged_changes()
-            sh.git.commit('-m', 'first commit')
-            assert not has_unstaged_changes()
             # add a directory
             dname = 'adir'
             Path(dname).mkdir()
@@ -68,8 +67,37 @@ def test_has_unstaged_changes():
             assert has_unstaged_changes()
             Path(dfile).unlink()
             assert not has_unstaged_changes()
-            Path(dname).rmdir()
-            assert not has_unstaged_changes()
             # modify the original file
             Path(fname).write_text('adsf')
             assert has_unstaged_changes()
+
+
+def test_has_untracked_unignored_files():
+    with TemporaryDirectory() as p:
+        with cd(p):
+            sh.git.init()
+            assert not has_untracked_unignored_files()
+            # add a file
+            fname = './file.txt'
+            Path(fname).touch()
+            assert has_untracked_unignored_files()
+            sh.git.add(fname)
+            assert not has_untracked_unignored_files()
+            # add a directory
+            dname = 'adir'
+            Path(dname).mkdir()
+            assert not has_untracked_unignored_files()
+            # add a file under that directory
+            dfile = dname + '/another.txt'
+            Path(dfile).touch()
+            assert has_untracked_unignored_files()
+            Path(dfile).unlink()
+            assert not has_untracked_unignored_files()
+            # add an ignored file
+            sh.git.rm('--cached', fname)
+            assert has_untracked_unignored_files()
+            ignorename = './.gitignore'
+            Path(ignorename).touch()
+            Path(ignorename).write_text('file.txt')
+            sh.git.add(ignorename)
+            assert not has_untracked_unignored_files()

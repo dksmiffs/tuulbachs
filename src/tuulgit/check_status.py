@@ -84,16 +84,3 @@ def is_clean_working_tree(check_if_working_tree=True):
     return not has_untracked_unignored_files() and \
         not has_unstaged_changes() and \
         not has_staged_uncommitted()
-
-
-def main():
-    # Show example usage
-    if is_clean_working_tree():
-        print('clean')
-    else:
-        print('NOT clean')
-
-
-# -----
-if '__main__' == __name__:
-    main()
