@@ -4,7 +4,6 @@ tag_commit.py
 Git tag the commit on the current branch, *only if* the working tree is clean
 """
 
-import re
 import sh
 from tuulbachs.exception import TuulError
 from tuulgit.check_status import is_clean_working_tree
