@@ -14,7 +14,6 @@ Low-level software tuuls, organized into drawers.
    drawers/tuulcli
    drawers/tuuldevops
    drawers/tuulgit
-   drawers/tuulpy
    drawers/tuulver
    drawers/tuulyaml
 
