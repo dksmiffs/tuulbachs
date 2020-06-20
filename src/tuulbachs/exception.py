@@ -1,5 +1,5 @@
 """
-exceptions.py
+exception.py
 ==========================
 This module contains the set of tuulbachs' exceptions.
 """

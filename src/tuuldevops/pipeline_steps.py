@@ -14,13 +14,3 @@ def major_step(title, description):
     """
     print(f'{CliColor.HEAD}{CliColor.BOLD}{title}: ' +
           f'{CliColor.ENDC}{description}')
-
-
-# -----
-def main():
-    major_step('Important step', 'kicking things off...')
-
-
-# -----
-if '__main__' == __name__:
-    main()

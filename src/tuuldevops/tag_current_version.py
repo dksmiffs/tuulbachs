@@ -16,14 +16,3 @@ def tag_product_version(conf_filename):
     given in conf_filename
     """
     tag_current_signed(emit_version(conf_filename))
-
-
-# -----
-def main():
-    # Show example usage
-    tag_product_version('../version.yaml')
-
-
-# -----
-if '__main__' == __name__:
-    main()
