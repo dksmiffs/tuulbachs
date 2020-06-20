@@ -7,6 +7,7 @@ from tuulfile.directory import cd
 from tuulgit.check_status import has_staged_uncommitted, \
                                  has_unstaged_changes, \
                                  has_untracked_unignored_files, \
+                                 is_clean_working_tree, \
                                  is_working_tree, \
                                  repo_toplevel_path
 
@@ -40,7 +41,7 @@ def test_has_staged_uncommitted():
             fname = './file.txt'
             Path(fname).touch()
             assert not has_staged_uncommitted()
-            sh.git.add('./file.txt')
+            sh.git.add(fname)
             assert has_staged_uncommitted()
             sh.git.commit('-m', 'first commit')
             assert not has_staged_uncommitted()
@@ -101,3 +102,26 @@ def test_has_untracked_unignored_files():
             Path(ignorename).write_text('file.txt')
             sh.git.add(ignorename)
             assert not has_untracked_unignored_files()
+
+
+def test_is_clean_working_tree():
+    with TemporaryDirectory() as p:
+        with cd(p):
+            sh.git.init()
+            assert is_clean_working_tree()
+            # add a file
+            fname = './file.txt'
+            Path(fname).touch()
+            assert not is_clean_working_tree()
+            sh.git.add(fname)
+            assert not is_clean_working_tree()
+            sh.git.commit('-m', 'dummy commit msg')
+            assert is_clean_working_tree()
+            # add a directory
+            dname = 'adir'
+            Path(dname).mkdir()
+            assert is_clean_working_tree()
+            # add a file under that directory
+            dfile = dname + '/another.txt'
+            Path(dfile).touch()
+            assert not is_clean_working_tree()

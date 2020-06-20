@@ -5,9 +5,9 @@ Git tag the commit on the current branch, *only if* the working tree is clean
 """
 
 import re
+import sh
 from tuulbachs.exception import TuulError
 from tuulgit.check_status import is_clean_working_tree
-from tuulpy.subprocess import subpResult
 
 
 # -----
@@ -15,11 +15,10 @@ def __tag_current_helper(tag, option):
     if not is_clean_working_tree():
         raise TuulError('tag not allowed on unclean working tree')
     else:
-        res = subpResult.run('git tag ' + option +
-                             ' -m "tuulgit-generated tag" ' +
-                             tag)
-        if re.search(b'^fatal.*already exists$', res):
-            raise TuulError('cannot apply tag that already exists in the repo')
+        try:
+            sh.git.tag(option, '-m', '"tuulgit-generated tag"', tag)
+        except sh.ErrorReturnCode_128:
+            raise TuulError('Is HEAD a valid reference in your git repo?')
 
 
 # -----
@@ -52,40 +51,7 @@ def tag_delete_local(tag):
 
     :raises TuulError: if the tag delete fails
     """
-    res = subpResult.run('git tag -d ' + tag)
-    if re.search(b'^error', res):
-        raise TuulError('failed to delete tag')
-
-
-# -----
-def main():
-    # Show example usage
     try:
-        atag = 'temptag'
-        tag_current(atag)
-        print('tag successful')
-        try:
-            tag_current(atag)
-        except TuulError:
-            print('reusing same tag failed as expected')
-        tag_delete_local(atag)
-        print('delete tag successful')
-        try:
-            tag_delete_local(atag)
-        except TuulError:
-            print('deleting non-existent tag failed as expected')
-        tag_current_signed(atag)
-        print('signed tag successful')
-        try:
-            tag_current_signed(atag)
-        except TuulError:
-            print('reusing signed tag failed as expected')
-        tag_delete_local(atag)
-        print('delete signed tag successful')
-    except TuulError as e:
-        raise e
-
-
-# -----
-if '__main__' == __name__:
-    main()
+        sh.git.tag('-d', tag)
+    except sh.ErrorReturnCode_1:
+        raise TuulError('Did you attempt to delete a non-existent tag?')
