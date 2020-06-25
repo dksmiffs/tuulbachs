@@ -19,11 +19,12 @@ def resource_path(relative_path):
     except Exception:
         base_path = os.path.abspath('..')
     return os.path.join(base_path, relative_path)
-        
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--version', help='output the version of tuul itself',
                     action='store_true')
 args = parser.parse_args()
 if args.version:
-  verYaml = resource_path('version.yaml')
-  print(emit_product_name(verYaml) + ' version ' + emit_version(verYaml))
+    verYaml = resource_path('version.yaml')
+    print(emit_product_name(verYaml) + ' version ' + emit_version(verYaml))
