@@ -23,7 +23,7 @@ Low-level software tuuls, organized into drawers.
 
    meta/install
    meta/deploy
-   meta/internal API <meta/internal>
+   internal API <meta/internal>
 
 Indices and tables
 ==================
