@@ -1,6 +1,4 @@
 """
-update_simple_value.py
-================================
 Update a simple top-level value in a YAML file
 """
 

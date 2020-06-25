@@ -1,6 +1,4 @@
 """
-tag_current_version.py
-===============================
 Git tag the commit on the current branch with the current version of this
 software
 """

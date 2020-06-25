@@ -1,17 +1,17 @@
 """
-exception.py
-==========================
-This module contains the set of tuulbachs' exceptions.
+Project exception class
 """
 
 
 class TuulError(Exception):
     """
-    The parent exception from which all other Tuulbachs Python exceptions are
-    derived.
+    Class used for exceptions thrown by tuulbachs
     """
 
     def __init__(self, msg=None):
+        """
+        Constructor that provides a default error message if one's not given
+        """
         if msg is None:
             msg = 'An error occurred in tuulbachs'
         super(TuulError, self).__init__(msg)

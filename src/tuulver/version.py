@@ -1,6 +1,4 @@
 """
-version.py
-==================
 Utility functions for managing a tuulbachs-formatted version YAML file
 """
 

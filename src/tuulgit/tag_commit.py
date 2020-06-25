@@ -1,6 +1,4 @@
 """
-tag_commit.py
-===============================
 Git tag the commit on the current branch, *only if* the working tree is clean
 """
 

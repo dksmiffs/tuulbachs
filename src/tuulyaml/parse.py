@@ -1,6 +1,4 @@
 """
-parse.py
-======================
 Parse an input YAML file
 """
 from pathlib import Path

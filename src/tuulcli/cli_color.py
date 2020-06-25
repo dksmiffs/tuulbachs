@@ -1,6 +1,4 @@
 """
-cli_color.py
-===============================
 Define colors and font styles for use in CLI output
 """
 

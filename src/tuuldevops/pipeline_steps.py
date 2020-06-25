@@ -1,6 +1,4 @@
 """
-pipeline_steps.py
-===============================
 Provide routines for outputting automated pipeline steps consistently
 """
 

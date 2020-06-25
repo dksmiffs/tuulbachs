@@ -1,7 +1,5 @@
 """
-tuul.py
-==================
-Top level script for executing tuulbachs features.
+Top level script for executing tuulbachs features
 """
 
 import argparse
@@ -11,7 +9,7 @@ from tuulver.version import emit_product_name, emit_version
 
 
 def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
+    """Get absolute path to resource, works for dev and for PyInstaller"""
     # Guidance: https://stackoverflow.com/a/13790741
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS

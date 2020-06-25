@@ -1,6 +1,4 @@
 """
-check_status.py
-===============================
 Check the status of the local git working tree
 """
 

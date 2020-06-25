@@ -1,6 +1,4 @@
 """
-update_version.py
-===============================
 Update the version in the tuulbachs-formatted YAML version file
 """
 
