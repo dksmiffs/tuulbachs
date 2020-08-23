@@ -1,6 +1,8 @@
 deploy
 ======
-Guidance about how to deploy updates to tuulbachs itself
+How to deploy updates to tuulbachs itself.
+
+Prerequisite:  User must have already followed :doc:`install` guidance at least once in the target environment.
 
 #. Decide which type of `semantic version <https://semver.org/>`_ upgrade this is (major, minor, patch, etc.)
 #. From ``tuulver/version.py``, use the appropriate ``bump_*`` function to update the version string in ``version.yaml``
