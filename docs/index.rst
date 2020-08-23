@@ -1,6 +1,23 @@
-tuulbachs documentation
-=======================
-Low-level software tuuls, organized into drawers.
+=======
+Purpose
+=======
+Automate low-level, repetitive, yet important development tasks related to
+semantic versioning, distributed version control, configuration parsing, and
+build pipelines.
+
+============
+Key Features
+============
+* Increment `semantic version <https://semver.org/>`_ parts for a versioned
+  entity
+* Manage the status of a local Git working tree
+* Manage Git tags, local and remote, signed and unsigned
+* Parse and update basic YAML configuration files
+
+==========
+Quickstart
+==========
+TBD
 
 .. toctree::
    :maxdepth: 2
