@@ -36,7 +36,7 @@ TBD
 
 .. toctree::
    :maxdepth: 1
-   :caption: Meta
+   :caption: Tuulbachs Developers
 
    meta/install
    meta/deploy
