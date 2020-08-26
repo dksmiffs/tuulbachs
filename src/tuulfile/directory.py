@@ -11,7 +11,7 @@ class cd:
        https://stackoverflow.com/a/13197763
     """
     def __init__(self, newPath):
-        """Construct the context manager by storing newPath"""
+        """Construct the context manager by storing newPath."""
         self.newPath = path.expanduser(newPath)
 
     def __enter__(self):
