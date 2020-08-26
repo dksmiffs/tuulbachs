@@ -1,4 +1,6 @@
 flake8            # Style guide enforcement        - https://flake8.pycqa.org
+pip-tools         # Keep pip-based pkgs fresh      - https://github.com/jazzband/pip-tools
+pyinstaller       # Standalone Python executables  - https://www.pyinstaller.org
 pytest            # Python testing tool            - https://pytest.org
 pytest-cov        # Coverage plugin for pytest     - https://github.com/pytest-dev/pytest-cov
 pytest-mock       # Mocking plugin for pytest      - https://github.com/pytest-dev/pytest-mock
