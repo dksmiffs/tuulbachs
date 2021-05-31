@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'tuulbachs'
-copyright = '2020, Dave Smith'
+copyright = '2020-21, Dave Smith'
 author = 'Dave Smith'
 master_doc = 'index'
 

@@ -1,5 +1,9 @@
 _build
+build
 .coverage
+devenv
+*.egg-info
+.eggs
 htmlcov
 __pycache__
 sandbox
