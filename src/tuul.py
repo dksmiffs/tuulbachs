@@ -26,7 +26,7 @@ parser.add_argument('--version',
                     help='output local product\'s version',
                     action='store_true')
 parser.add_argument('--bump',
-                    choices=('major','minor','patch'),
+                    choices=('major', 'minor', 'patch'),
                     dest='bumpchoice',
                     help='bump a portion of the local product\'s version')
 parser.add_argument('--autotag',
